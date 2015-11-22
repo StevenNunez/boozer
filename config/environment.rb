@@ -1,12 +1,5 @@
-require 'bundler'
-Bundler.require
+# Load the Rails application.
+require File.expand_path('../application', __FILE__)
 
-ActiveRecord::Base.establish_connection(
-  adapter: "sqlite3",
-  database: "db/boozer_development.db"
-)
-
-$: << '.'
-Dir["app/models/*.rb"].each{|f| require f}
-Dir["app/controllers/*.rb"].each{|f| require f}
-Dir["app/views/*.rb"].each{|f| require f}
+# Initialize the Rails application.
+Rails.application.initialize!
