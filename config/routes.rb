@@ -5,5 +5,8 @@ Rails.application.routes.draw do
       resources :ingredients, except: [:new, :edit]
       resources :proportions, only: [:index, :show]
     end
+    namespace :v2 do
+      resources :cocktails, except: [:new, :edit]
+    end
   end
 end
